@@ -2,6 +2,12 @@
   "name": "bee-icons",
   "version": "0.1.0",
   "private": true,
+  "description": "An original Icon Pool for your next project!",
+  "author": "Manuel Sánchez",
+  "bugs": {
+    "url": "https://github.com/manuelsanchezweb/bee-icons/issues"
+  },
+  "homepage": "https://github.com/manuelsanchezweb/bee-icons#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
