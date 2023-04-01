@@ -24,6 +24,17 @@ By the way, **if you want to give a try to mindful creating icons, you can alway
 
 All the icons are completely free to use it, **either in personal or commercial projects**.
 
+## 🪜 Next Steps (April 2023)
+
+- [ ] Add thumbnail for sharing the app
+- [ ] Create component that renders the icon (24x24) by default
+- [ ] Create functions that get the icon by name, and also get other icon sizes by name
+- [ ] Create search filter function
+- [ ] Create the icon Hive Cell component
+- [ ] Create a simple pagination system (show max number of icon per view)
+- [ ] Click the icon will download automatically 24x24 version (later we will have a modal)
+- [ ] Add glassmorphism background
+
 ## 📧 Contact
 
 If you want to contact us, you can always send an email to [manusanchezweb@gmail.com](mailto:manusanchezweb@gmail.com) or create an issue in this repo. We will come back to you as sweet as honey!
