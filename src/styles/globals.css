@@ -14,6 +14,7 @@
   --bee-blue: #4891ff;
   --bee-black: #161616;
   --bee-white: #ffffff;
+  --bee-gray: #b7b7b7;
 
   --max-width: 1440px;
 }
@@ -74,4 +75,25 @@ svg {
   .btn {
     @apply bee-white bg-[var(--bee-blue)] py-3 px-6 rounded-lg text-lg font-bold flex max-w-fit;
   }
+}
+
+@keyframes toggleColor {
+  from {
+    fill: var(--bee-blue);
+  }
+  to {
+    fill: var(--bee-black);
+  }
+}
+
+.icon-1 {
+  animation: toggleColor 2s ease-in-out infinite;
+}
+
+.icon-2 {
+  animation: toggleColor 2s ease-in-out 0.66s infinite;
+}
+
+.icon-3 {
+  animation: toggleColor 2s ease-in-out 1.33s infinite;
 }
