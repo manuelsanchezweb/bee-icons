@@ -4,8 +4,6 @@ export const icons = [
   {
     id: 1,
     name: "search",
-    mainCategory: "basics",
-    tags: ["search, lupe, zoom"],
     icon: {
       xs: "<svg>...</svg>",
       sm: "",
@@ -13,12 +11,12 @@ export const icons = [
       lg: "",
       xl: "",
     },
+    mainCategory: "basics",
+    tags: ["search, lupe, zoom"],
   },
   {
     id: 2,
     name: "pig",
-    mainCategory: "animals",
-    tags: ["pig, piggy, piglet"],
     icon: {
       xs: `<svg>...</svg>`,
       sm: ``,
@@ -42,5 +40,7 @@ export const icons = [
       lg: ``,
       xl: ``,
     },
+    mainCategory: "animals",
+    tags: ["pig, piggy, piglet"],
   },
 ];
