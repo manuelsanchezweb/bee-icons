@@ -5,8 +5,8 @@ const Contact = () => {
     <div className="flex flex-col items-center text-center lg:text-left lg:flex-row md:justify-between gap-6 mb-16">
       <div className="flex flex-col items-center lg:items-start">
         <h2 className="font-bold text-4xl max-w-[475px]">
-          Have a question or just want to buzz{" "}
-          <span className="bee-blue font-black">about icons? </span>{" "}
+          Have a question or just want to buzz
+          <span className="bee-blue font-black">about icons? </span>
         </h2>
         <IconBeeColor />
       </div>
@@ -15,7 +15,7 @@ const Contact = () => {
           Drop us a message and we'll get back to you as sweet as honey!
         </p>
         <a
-          className="btn "
+          className="btn"
           title="Contact us"
           target="_blank"
           rel="nofollow noopener"

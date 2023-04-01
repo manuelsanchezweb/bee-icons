@@ -9,12 +9,9 @@ const Hero = () => {
           Hive.
         </h1>
         <p className="font-medium text-xl lg:max-w-[550px]">
-          Infuse your web and app projects with our vibrant, open source SVG{" "}
-          <span>
-            <span className="bee-blue">icon library</span>
-          </span>
-          , inspired by nature's hardest workers, and sweeten your digital
-          creations.
+          Infuse your web and app projects with our vibrant, open source SVG
+          <span className="bee-blue">icon library</span>, inspired by nature's
+          hardest workers, and sweeten your digital creations.
         </p>
       </div>
       <IconsHero classIcon="min-w-[300px]" />
