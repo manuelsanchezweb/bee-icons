@@ -12,7 +12,9 @@ const IconList = () => {
     const isInCategory = (icon: Icon) =>
       icon.category?.toLowerCase().includes(term.toLowerCase().trim());
     const isInTags = (icon: Icon) =>
-      icon.tags?.some((tag) => tag.toLowerCase().includes(selectedTerm));
+      icon.tags?.some((tag) =>
+        tag.toLowerCase().includes(term.toLowerCase().trim())
+      );
 
     return icons.filter((icon) => isInCategory(icon) || isInTags(icon));
   }
@@ -49,7 +51,7 @@ const IconList = () => {
         placeholder="Search Icon Here"
       />
 
-      <ul className="flex flex-wrap justify-center sm:justify-start items-start gap-8 md:gap-x-24 md:min-h-[220px]">
+      <ul className="flex flex-wrap items-start gap-8 md:gap-x-24 md:min-h-[220px]">
         {icons.map((icon, index) => (
           <li
             key={index}
