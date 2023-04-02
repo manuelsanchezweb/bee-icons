@@ -31,6 +31,23 @@
   color: var(--bee-white) !important;
 }
 
+.bee-blue-border {
+  border: 1px solid var(--bee-blue) !important;
+}
+
+.hexa-shape {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}
+
+.hexa-shadow {
+  box-shadow: 0px 4px 24px rgba(72, 145, 255, 0.1);
+}
+
+.list-shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1),
+    0px 14px 54px rgba(72, 145, 255, 0.3);
+}
+
 body {
   font-family: "Satoshi", sans-serif;
   color: var(--bee-black);

@@ -22,17 +22,17 @@ We got really inspired by bigger projects like [thenounproject](https://thenounp
 
 By the way, **if you want to give a try to mindful creating icons, you can always create a PR**. We will take a look carefully!
 
-All the icons are completely free to use it, **either in personal or commercial projects**.
+All the icons are completely made by us from the very first pixel and free to use it, **either in personal or commercial projects**.
 
 ## 🪜 Next Steps (April 2023)
 
-- [ ] Add thumbnail for sharing the app
-- [ ] Create component that renders the icon (24x24) by default
+- [x] Add thumbnail for sharing the app
+- [x] Create component that renders the icon (24x24) by default
 - [ ] Create functions that get the icon by name, and also get other icon sizes by name
-- [ ] Create search filter function
-- [ ] Create the icon Hive Cell component
+- [x] Create search filter function
+- [x] Create the icon Hive Cell component
 - [ ] Create a simple pagination system (show max number of icon per view)
-- [ ] Click the icon will download automatically 24x24 version (later we will have a modal)
+- [x] Click the icon will download automatically 24x24 version (later we will have a modal)
 - [ ] Add glassmorphism background
 
 ## 📧 Contact

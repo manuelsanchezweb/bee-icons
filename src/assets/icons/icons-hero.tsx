@@ -16,38 +16,38 @@ const IconsHero = ({ classIcon }: { classIcon?: string }) => {
       <path
         d="M286.758 303.742V299.388C286.758 297.512 285.543 295.872 283.854 295.053C265.45 286.127 268.886 260.439 285.851 251.376C286.44 251.062 287.105 250.914 287.773 250.914H335.037C336.523 250.914 337.91 251.663 338.725 252.906L344.935 262.371C345.75 263.614 347.137 264.363 348.623 264.363H350.653C353.089 264.363 355.064 266.338 355.064 268.774V274.198C355.064 276.634 353.089 278.609 350.653 278.609H348.068C346.898 278.609 345.776 279.074 344.949 279.901L338.711 286.14C337.883 286.967 337.419 288.089 337.419 289.259V300.666V303.742C337.419 306.178 335.444 308.153 333.007 308.153H328.189C325.753 308.153 323.778 306.178 323.778 303.742V301.576C323.778 299.14 321.803 297.165 319.366 297.165H304.35C301.914 297.165 299.939 299.14 299.939 301.576V303.742C299.939 306.178 297.964 308.153 295.527 308.153H291.17C288.733 308.153 286.758 306.178 286.758 303.742Z"
         stroke="white"
-        stroke-width="8.82263"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="8.82263"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <circle cx="331.108" cy="267.182" r="4.58697" fill="white" />
       <path
         d="M293.544 260.451L280.311 241.376"
         stroke="white"
-        stroke-width="8.82263"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="8.82263"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M304.465 254.495L291.231 235.42"
         stroke="white"
-        stroke-width="8.82263"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="8.82263"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M319.905 257.477L306.671 238.402"
         stroke="white"
-        stroke-width="8.82263"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="8.82263"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M330.933 250.914L317.699 231.839"
         stroke="white"
-        stroke-width="8.82263"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="8.82263"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         className="icon-1"
@@ -60,19 +60,19 @@ const IconsHero = ({ classIcon }: { classIcon?: string }) => {
           cy="96.4422"
           r="38.474"
           stroke="white"
-          stroke-width="7.12113"
+          strokeWidth="7.12113"
         />
         <path
           d="M201.744 77.9541C201.744 80.3278 201.744 86.2621 201.744 91.0095C201.744 95.7569 201.744 98.5262 201.744 99.3175"
           stroke="white"
-          stroke-width="7.12113"
-          stroke-linecap="round"
+          strokeWidth="7.12113"
+          strokeLinecap="round"
         />
         <path
           d="M201.744 113.837L201.744 113.872"
           stroke="white"
-          stroke-width="7.12113"
-          stroke-linecap="round"
+          strokeWidth="7.12113"
+          strokeLinecap="round"
         />
       </g>
       <path
@@ -84,15 +84,15 @@ const IconsHero = ({ classIcon }: { classIcon?: string }) => {
         <path
           d="M55.3513 269.996C55.3513 292.584 73.6625 310.895 96.2505 310.895C102.945 310.895 109.263 309.287 114.841 306.436C114.206 305.145 111.838 296.823 120.124 295.615C118.225 287.846 124.095 279.732 134.362 284.868C136.162 280.259 137.15 275.243 137.15 269.996C137.15 247.408 118.839 229.097 96.2505 229.097C73.6625 229.097 55.3513 247.408 55.3513 269.996Z"
           stroke="white"
-          stroke-width="7.43622"
-          stroke-linejoin="round"
+          strokeWidth="7.43622"
+          strokeLinejoin="round"
         />
         <circle
           cx="96.2507"
           cy="269.996"
           r="14.8724"
           stroke="white"
-          stroke-width="7.43622"
+          strokeWidth="7.43622"
         />
       </g>
       <defs>
