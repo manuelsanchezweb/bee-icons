@@ -4,6 +4,10 @@
 
 # 💙 BeeIcons
 
+<img src="https://img.shields.io/github/contributors/manuelsanchezweb/bee-icons" alt="Iconos">
+<img src="https://img.shields.io/github/issues-raw/manuelsanchezweb/bee-icons" alt="Iconos">
+<img src="https://img.shields.io/badge/22-icons%20available-blue" alt="Iconos">
+
 Your new favourite icon pool!
 
 </div>
@@ -34,6 +38,7 @@ All the icons are completely made by us from the very first pixel and free to us
 - [ ] Create a simple pagination system (show max number of icon per view)
 - [x] Click the icon will download automatically 24x24 version (later we will have a modal)
 - [ ] Add glassmorphism background
+- [x] Add filter by category
 
 ## 📧 Contact
 

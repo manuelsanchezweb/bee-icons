@@ -1,5 +1,5 @@
 export type Icon = {
-  id?: number;
+  id: number;
   name: string;
   icon: {
     xs: string;
@@ -8,6 +8,6 @@ export type Icon = {
     lg: string;
     xl: string;
   };
-  category?: string;
-  tags?: string[];
+  category: string[];
+  tags: string[];
 };

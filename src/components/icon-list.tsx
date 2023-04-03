@@ -1,29 +1,32 @@
 import { iconsData } from "@/data/icons";
 import { Icon } from "@/types/types";
-import { downloadSVG } from "@/utils/utils";
+import {
+  downloadSVG,
+  filterIconsByCategory,
+  filterIconsBySearchTerm,
+  getUniqueCategories,
+} from "@/utils/utils";
 import { animate, stagger } from "motion";
 import { useEffect, useState } from "react";
 
 const IconList = () => {
   const [icons, setIcons] = useState<Icon[]>(iconsData);
   const [selectedTerm, setSelectedTerm] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
 
-  function filterIconsBySearchTerm(icons: Icon[], term: string) {
-    const isInCategory = (icon: Icon) =>
-      icon.category?.toLowerCase().includes(term.toLowerCase().trim());
-    const isInTags = (icon: Icon) =>
-      icon.tags?.some((tag) =>
-        tag.toLowerCase().includes(term.toLowerCase().trim())
-      );
-
-    return icons.filter((icon) => isInCategory(icon) || isInTags(icon));
-  }
+  const allCategories = getUniqueCategories(iconsData);
 
   useEffect(() => {
-    let filteredIcons =
-      selectedTerm === ""
-        ? iconsData
-        : filterIconsBySearchTerm(icons, selectedTerm);
+    let filteredIcons = iconsData;
+
+    if (selectedCategory !== "") {
+      filteredIcons = filterIconsByCategory(filteredIcons, selectedCategory);
+    }
+
+    if (selectedTerm !== "") {
+      filteredIcons = filterIconsBySearchTerm(filteredIcons, selectedTerm);
+    }
+
     setIcons(filteredIcons);
 
     const li = document.querySelectorAll("li");
@@ -34,7 +37,7 @@ const IconList = () => {
       { opacity: [0, 1], scale: [0, 1] },
       { delay: stagger(0.1), easing: "ease-in-out" }
     );
-  }, [selectedTerm]);
+  }, [selectedTerm, selectedCategory]);
 
   const searchTerm = (event: any) => {
     setSelectedTerm(event.target.value);
@@ -42,14 +45,33 @@ const IconList = () => {
 
   return (
     <div className="list-shadow px-8 pt-12 pb-24 rounded-[40px] mb-24">
-      <input
-        className="ml-2 pl-2 h-[42px] rounded-md mb-16 bee-blue-border md:w-[460px]"
-        type="text"
-        name="search"
-        defaultValue={selectedTerm}
-        onKeyUp={searchTerm}
-        placeholder="Search Icon Here"
-      />
+      <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-16 ">
+        <input
+          className="ml-2 pl-2 h-[42px] rounded-md bee-blue-border md:w-[460px]"
+          type="text"
+          name="search"
+          defaultValue={selectedTerm}
+          onKeyUp={searchTerm}
+          placeholder="Search Icon Here"
+        />
+        <div className="flex items-center">
+          <label htmlFor="category">Category:</label>
+          <select
+            className="ml-2 h-[42px] appearance-none outline-none"
+            name="category"
+            id="category"
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            value={selectedCategory}
+          >
+            <option value="all">all</option>
+            {allCategories.map((category, index) => (
+              <option key={index} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
 
       <ul className="flex flex-wrap items-start gap-8 md:gap-x-24 md:min-h-[220px]">
         {icons.map((icon, index) => (

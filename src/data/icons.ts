@@ -12,7 +12,7 @@ const example = [
       lg: ``,
       xl: ``,
     },
-    category: "example",
+    category: ["example"],
     tags: ["example", "example", "example"],
   },
 ];
@@ -33,7 +33,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "animals",
+    category: ["animals"],
     tags: [
       "bee, hive, honey, insect, nature, pollination, pollinator, summer, yellow, yellow and black, yellow and black striped, striped, black, black and yellow, black and yellow strip",
     ],
@@ -64,7 +64,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "animals",
+    category: ["animals"],
     tags: ["pig, piggy, piglet, farm, animal, cute"],
   },
   {
@@ -85,7 +85,7 @@ export const iconsData = [
       `,
       xl: ``,
     },
-    category: "animals",
+    category: ["animals"],
     tags: ["pig, piggy, piglet, farm, animal, cute"],
   },
   {
@@ -100,7 +100,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "food",
+    category: ["food"],
     tags: [
       "egg",
       "chicken",
@@ -129,7 +129,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "food",
+    category: ["food"],
     tags: ["fruits", "fruit", "pear", "pear tree"],
   },
   {
@@ -152,7 +152,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "food",
+    category: ["food"],
     tags: [
       "donut",
       "donought",
@@ -188,7 +188,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "food",
+    category: ["food"],
     tags: [
       "donut",
       "donought",
@@ -215,7 +215,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "food",
+    category: ["food"],
     tags: [
       "banane",
       "fruit",
@@ -268,7 +268,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "basic",
+    category: ["basic"],
     tags: ["search", "lupe", "find", "search icon", "search button"],
   },
   {
@@ -300,7 +300,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "basic",
+    category: ["basic"],
     tags: ["alert", "circle", "alert icon", "alert button"],
   },
   {
@@ -347,7 +347,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "basic",
+    category: ["basic"],
     tags: ["alert", "circle", "alert icon", "alert button"],
   },
   {
@@ -384,7 +384,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "basic",
+    category: ["basic"],
     tags: ["zoom", "zoom in", "zoom in icon", "zoom in button", "lupe"],
   },
   {
@@ -419,7 +419,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "basic",
+    category: ["basic"],
     tags: ["zoom", "zoom out", "zoom out icon", "zoom out button", "lupe"],
   },
   {
@@ -435,7 +435,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "basic",
+    category: ["basic"],
     tags: ["message", "send", "email", "letter", "mail"],
   },
   {
@@ -451,7 +451,7 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "basic",
+    category: ["basic"],
     tags: ["file", "document", "paper", "folder", "folder"],
   },
   {
@@ -469,7 +469,179 @@ export const iconsData = [
       </svg>`,
       xl: ``,
     },
-    category: "basic",
+    category: ["basic"],
     tags: ["file", "document", "paper", "folder", "folder", "alert", "warning"],
+  },
+  {
+    id: 16,
+    name: "candy",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#candy-lg-clip)">
+      <rect width="24" height="24" fill="none"/>
+      <rect width="8.94979" height="11.798" rx="2" transform="matrix(0.491489 0.870884 -0.861027 0.508559 14.8799 5.36603)" stroke="black" stroke-width="2"/>
+      <path d="M17.9019 10.7208L20.0027 10.9983C21.6337 11.2137 22.8155 9.42746 21.9992 7.98091L20.8962 6.0266C20.0352 4.50085 17.7883 4.77677 17.2786 6.47085L16.6613 8.5226" stroke="black" stroke-width="2"/>
+      <path d="M7.7434 16.7208L6.92788 18.7208C6.29478 20.2735 4.19173 20.4275 3.37536 18.9809L2.27243 17.0266C1.41136 15.5009 2.76835 13.6482 4.45731 14.0437L6.50285 14.5226" stroke="black" stroke-width="2"/>
+      </g>
+      <defs>
+      <clipPath id="candy-lg-clip">
+      <rect width="24" height="24" fill="none"/>
+      </clipPath>
+      </defs>
+      </svg>`,
+      xl: ``,
+    },
+    category: ["food"],
+    tags: ["candy", "sweet", "sugar", "chocolate", "lollipop", "diabetes"],
+  },
+  {
+    id: 17,
+    name: "music",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#music-lg-clip)">
+      <rect width="24" height="24" fill="none"/>
+      <circle cx="5" cy="19" r="4" stroke="black" stroke-width="2"/>
+      <circle cx="19" cy="19" r="4" stroke="black" stroke-width="2"/>
+      <path d="M7 15V2C7 1.44772 7.44772 1 8 1H20C20.5523 1 21 1.44772 21 2V15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 7H20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <defs>
+      <clipPath id="music-lg-clip">
+      <rect width="24" height="24" fill="none"/>
+      </clipPath>
+      </defs>
+      </svg>`,
+      xl: ``,
+    },
+    category: ["basic"],
+    tags: ["music", "sound", "audio", "speaker", "note"],
+  },
+  {
+    id: 18,
+    name: "pacman",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#pacman-lg-clip)">
+      <rect width="24" height="24" fill="none"/>
+      <path d="M22.6787 12C22.6787 9.40077 21.7307 6.89076 20.0124 4.94051C18.2941 2.99026 15.9235 1.73367 13.345 1.4063C10.7664 1.07892 8.15701 1.70325 6.00587 3.16223C3.85473 4.62121 2.30956 6.81468 1.66003 9.33146C1.0105 11.8482 1.30119 14.5155 2.47762 16.8333C3.65405 19.151 5.63544 20.9602 8.05036 21.9215C10.4653 22.8829 13.1479 22.9304 15.5954 22.0553C18.0429 21.1801 20.0872 19.4424 21.345 17.1678L12 12H22.6787Z" stroke="black" stroke-width="2"/>
+      </g>
+      <defs>
+      <clipPath id="pacman-lg-clip">
+      <rect width="24" height="24" fill="none"/>
+      </clipPath>
+      </defs>
+      </svg>`,
+      xl: ``,
+    },
+    category: ["basic"],
+    tags: ["pacman", "game", "arcade", "coin"],
+  },
+  {
+    id: 19,
+    name: "user",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#user-lg-clip)">
+      <rect width="24" height="24" fill="none"/>
+      <circle cx="12" cy="5.8" r="4.8" stroke="black" stroke-width="2"/>
+      <path d="M4 23.4V20.2C4 17.549 6.14903 15.4 8.8 15.4H15.2C17.851 15.4 20 17.549 20 20.2V23.4" stroke="black" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <defs>
+      <clipPath id="user-lg-clip">
+      <rect width="24" height="24" fill="none"/>
+      </clipPath>
+      </defs>
+      </svg>`,
+      xl: ``,
+    },
+    category: ["basic", "starred"],
+    tags: ["user", "person", "avatar", "profile", "account"],
+  },
+
+  {
+    id: 20,
+    name: "users",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#users-lg-clip)">
+      <rect width="24" height="24" fill="none"/>
+      <circle cx="10.0769" cy="5.84615" r="4.84615" stroke="black" stroke-width="2"/>
+      <path d="M16.5385 10.6923C19.2149 10.6923 21.3846 8.57497 21.3846 5.87988C21.3846 3.1848 19.2149 1 16.5385 1" stroke="black" stroke-width="2" stroke-linecap="round"/>
+      <path d="M2 23.6154V20.3846C2 17.7082 4.1697 15.5385 6.84615 15.5385H13.3077C15.9841 15.5385 18.1538 17.7082 18.1538 20.3846V23.6154" stroke="black" stroke-width="2" stroke-linecap="round"/>
+      <path d="M23 23.6154V18.7692C23 16.9849 21.5535 15.5385 19.7692 15.5385V15.5385" stroke="black" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <defs>
+      <clipPath id="users-lg-clip">
+      <rect width="24" height="24" fill="none"/>
+      </clipPath>
+      </defs>
+      </svg>`,
+      xl: ``,
+    },
+    category: ["basic"],
+    tags: [
+      "user",
+      "person",
+      "avatar",
+      "profile",
+      "account",
+      "group",
+      "team",
+      "people",
+      "friends",
+      "family",
+      "members",
+      "memberships",
+      "users",
+    ],
+  },
+  {
+    id: 21,
+    name: "mask",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" fill="none"/>
+        <path d="M13.3675 16.1165C12.9837 17.0778 12.5402 17.8625 12.0456 18.4335C11.4151 19.1614 10.7449 19.5 10 19.5C8.22924 19.5 6.50372 18.4234 5.1752 16.4306C3.85133 14.4448 3 11.6438 3 8.49998C3 8.22557 3.02666 8.0677 3.05063 7.98233C3.06241 7.98414 3.07544 7.9864 3.08977 7.98921C3.23693 8.01812 3.45197 8.09254 3.74261 8.23841C4.94861 8.84371 6.68511 10.2681 8.68473 12.0174C9.18956 12.459 9.70806 12.9184 10.2327 13.3832C11.2733 14.3053 12.3379 15.2486 13.3675 16.1165ZM3.08791 7.894C3.08835 7.89466 3.0855 7.90008 3.07804 7.90827C3.08374 7.89743 3.08747 7.89334 3.08791 7.894ZM15.9448 15.6438C15.868 15.5829 15.7908 15.5213 15.7134 15.459C16.557 12.6914 16.9389 9.32323 16.9932 6.26644C17.5326 7.21493 18.1542 8.58225 18.7188 10.1111C19.4814 12.1761 20.0871 14.3925 20.2434 16.0524C20.3232 16.9004 20.2727 17.4831 20.1553 17.8106C20.129 17.8841 20.1036 17.9318 20.0847 17.9606C20.0755 17.9748 20.0681 17.9839 20.0634 17.9893C20.0613 17.9916 20.0596 17.9934 20.0584 17.9945C20.052 17.9962 20.0339 18 20 18C19.7225 18 19.2191 17.8473 18.4554 17.4095C17.7244 16.9903 16.8763 16.3823 15.9448 15.6438ZM17.0686 4.79309C17.0688 4.79359 17.0668 4.80005 17.0618 4.81094C17.0659 4.79804 17.0684 4.79259 17.0686 4.79309ZM16.1561 5.09103C16.1503 5.08754 16.1472 5.08537 16.1472 5.08515C16.1471 5.08494 16.15 5.08669 16.1561 5.09103Z" stroke="black" stroke-width="2"/>
+        </svg>`,
+      xl: ``,
+    },
+    category: ["basic"],
+    tags: ["mask", "face", "cover", "protect", "safety"],
+  },
+  {
+    id: 22,
+    name: "reload",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="24" height="24" fill="none"/>
+      <path d="M20.7047 3.30992V9.06H14.9547" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16.7886 5.01011L16.2238 5.83537L16.7886 5.01011ZM21.0975 15.8716C21.2872 15.3529 21.0205 14.7787 20.5018 14.589C19.9831 14.3994 19.4088 14.6661 19.2192 15.1848L21.0975 15.8716ZM18.9226 7.06002L19.7245 6.46253L19.7245 6.46253L18.9226 7.06002ZM17.3533 4.18486C15.3827 2.83627 12.9945 2.23736 10.6207 2.49643L10.8377 4.48463C12.7368 4.27737 14.6473 4.7565 16.2238 5.83537L17.3533 4.18486ZM10.6207 2.49643C8.24695 2.75551 6.04421 3.85547 4.41089 5.5974L5.86985 6.9654C7.17651 5.57186 8.9387 4.69189 10.8377 4.48463L10.6207 2.49643ZM4.41089 5.5974C2.77756 7.33932 1.82148 9.60821 1.71554 11.9938L3.71357 12.0825C3.79833 10.1741 4.56319 8.35894 5.86985 6.9654L4.41089 5.5974ZM1.71554 11.9938C1.6096 14.3793 2.3608 16.724 3.83328 18.6039L5.40777 17.3706C4.22978 15.8667 3.62882 13.9909 3.71357 12.0825L1.71554 11.9938ZM3.83328 18.6039C5.30577 20.4837 7.40233 21.7746 9.74382 22.2431L10.1362 20.2819C8.263 19.9072 6.58575 18.8745 5.40777 17.3706L3.83328 18.6039ZM9.74382 22.2431C12.0853 22.7116 14.5171 22.3267 16.5996 21.1581L15.6208 19.414C13.9549 20.3488 12.0094 20.6567 10.1362 20.2819L9.74382 22.2431ZM16.5996 21.1581C18.682 19.9895 20.2775 18.1143 21.0975 15.8716L19.2192 15.1848C18.5631 16.9789 17.2867 18.4791 15.6208 19.414L16.5996 21.1581ZM19.7245 6.46253C19.0703 5.58448 18.2712 4.81299 17.3533 4.18486L16.2238 5.83537C16.9581 6.33788 17.5973 6.95503 18.1207 7.6575L19.7245 6.46253ZM20.7001 8.06694C20.4255 7.50183 20.0987 6.96474 19.7245 6.46253L18.1207 7.6575C18.4201 8.0593 18.6816 8.48898 18.9013 8.94105L20.7001 8.06694Z" fill="black"/>
+      </svg>`,
+      xl: ``,
+    },
+    category: ["basic"],
+    tags: ["refresh", "reload", "update", "sync", "repeat"],
   },
 ];
