@@ -17,6 +17,14 @@
   --bee-gray: #b7b7b7;
 
   --max-width: 1440px;
+
+  --color-text: #161616;
+  --color-contrast: #ffffff;
+}
+
+body[data-theme="dark"] {
+  --color-text: #ffffff;
+  --color-contrast: #161616;
 }
 
 .bee-blue {
@@ -50,13 +58,8 @@
 
 body {
   font-family: "Satoshi", sans-serif;
-  color: var(--bee-black);
-  background-color: var(--bee-white);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.44) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  color: var(--color-text);
+  background-color: var(--color-contrast);
   backdrop-filter: blur(205px);
 }
 

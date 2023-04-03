@@ -1,3 +1,4 @@
+import { useTheme } from "@/context/ThemeContext";
 import { iconsData } from "@/data/icons";
 import { Icon } from "@/types/types";
 import {
@@ -10,6 +11,8 @@ import { animate, stagger } from "motion";
 import { useEffect, useState } from "react";
 
 const IconList = () => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
   const [icons, setIcons] = useState<Icon[]>(iconsData);
   const [selectedTerm, setSelectedTerm] = useState<string>("");
   const [selectedCategory, setSelectedCategory] = useState<string>("");
@@ -55,11 +58,11 @@ const IconList = () => {
           placeholder="Search Icon Here"
         />
         <div className="flex items-center">
-          <label htmlFor="category">Category:</label>
+          <label htmlFor="category-select">Category:</label>
           <select
-            className="ml-2 h-[42px] appearance-none outline-none"
+            className="ml-2 h-[42px] appearance-none outline-none bg-transparent"
             name="category"
-            id="category"
+            id="category-select"
             onChange={(e) => setSelectedCategory(e.target.value)}
             value={selectedCategory}
           >
@@ -87,7 +90,7 @@ const IconList = () => {
             </button>
             <span
               onClick={() => downloadSVG(icon, "lg")}
-              className="bee-blue text-xs cursor-pointer font-medium"
+              className={`{${isDark} ? "bee-blue : "text-white"} text-xs cursor-pointer font-medium`}
             >
               {icon.name}
             </span>

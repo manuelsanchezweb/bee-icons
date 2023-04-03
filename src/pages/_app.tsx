@@ -26,13 +26,17 @@ const satoshi = localFont({
   ],
 });
 
+import { ThemeProvider } from "@/context/ThemeContext";
 import "@/styles/globals.css";
+import "@/styles/toggle-mode.css";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={satoshi.className}>
-      <Component {...pageProps} />
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </div>
   );
 }

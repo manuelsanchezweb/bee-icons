@@ -3,6 +3,7 @@ import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import IconList from "@/components/icon-list";
+import ToggleMode from "@/components/toggle-mode";
 import Head from "next/head";
 
 export default function Home() {
@@ -31,7 +32,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Logo classIcon="mb-8 lg:mb-4 flex mx-auto lg:mx-0" />
+        <div className="flex gap-2 justify-between items-center mb-8 lg:mb-4">
+          <Logo classIcon="flex" />
+          <ToggleMode />
+        </div>
         <Hero />
         <div className="flex flex-col my-10 md:my-24 text-center gap-4">
           <h2 className="font-black text-4xl">
