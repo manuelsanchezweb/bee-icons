@@ -611,22 +611,22 @@ export const iconsData = [
       "users",
     ],
   },
-  {
-    id: 21,
-    name: "mask",
-    icon: {
-      xs: ``,
-      sm: ``,
-      md: ``,
-      lg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="24" fill="none"/>
-        <path d="M13.3675 16.1165C12.9837 17.0778 12.5402 17.8625 12.0456 18.4335C11.4151 19.1614 10.7449 19.5 10 19.5C8.22924 19.5 6.50372 18.4234 5.1752 16.4306C3.85133 14.4448 3 11.6438 3 8.49998C3 8.22557 3.02666 8.0677 3.05063 7.98233C3.06241 7.98414 3.07544 7.9864 3.08977 7.98921C3.23693 8.01812 3.45197 8.09254 3.74261 8.23841C4.94861 8.84371 6.68511 10.2681 8.68473 12.0174C9.18956 12.459 9.70806 12.9184 10.2327 13.3832C11.2733 14.3053 12.3379 15.2486 13.3675 16.1165ZM3.08791 7.894C3.08835 7.89466 3.0855 7.90008 3.07804 7.90827C3.08374 7.89743 3.08747 7.89334 3.08791 7.894ZM15.9448 15.6438C15.868 15.5829 15.7908 15.5213 15.7134 15.459C16.557 12.6914 16.9389 9.32323 16.9932 6.26644C17.5326 7.21493 18.1542 8.58225 18.7188 10.1111C19.4814 12.1761 20.0871 14.3925 20.2434 16.0524C20.3232 16.9004 20.2727 17.4831 20.1553 17.8106C20.129 17.8841 20.1036 17.9318 20.0847 17.9606C20.0755 17.9748 20.0681 17.9839 20.0634 17.9893C20.0613 17.9916 20.0596 17.9934 20.0584 17.9945C20.052 17.9962 20.0339 18 20 18C19.7225 18 19.2191 17.8473 18.4554 17.4095C17.7244 16.9903 16.8763 16.3823 15.9448 15.6438ZM17.0686 4.79309C17.0688 4.79359 17.0668 4.80005 17.0618 4.81094C17.0659 4.79804 17.0684 4.79259 17.0686 4.79309ZM16.1561 5.09103C16.1503 5.08754 16.1472 5.08537 16.1472 5.08515C16.1471 5.08494 16.15 5.08669 16.1561 5.09103Z" stroke="black" stroke-width="2"/>
-        </svg>`,
-      xl: ``,
-    },
-    category: ["basic"],
-    tags: ["mask", "face", "cover", "protect", "safety"],
-  },
+  // {
+  //   id: 21,
+  //   name: "mask",
+  //   icon: {
+  //     xs: ``,
+  //     sm: ``,
+  //     md: ``,
+  //     lg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //       <rect width="24" height="24" fill="none"/>
+  //       <path d="M13.3675 16.1165C12.9837 17.0778 12.5402 17.8625 12.0456 18.4335C11.4151 19.1614 10.7449 19.5 10 19.5C8.22924 19.5 6.50372 18.4234 5.1752 16.4306C3.85133 14.4448 3 11.6438 3 8.49998C3 8.22557 3.02666 8.0677 3.05063 7.98233C3.06241 7.98414 3.07544 7.9864 3.08977 7.98921C3.23693 8.01812 3.45197 8.09254 3.74261 8.23841C4.94861 8.84371 6.68511 10.2681 8.68473 12.0174C9.18956 12.459 9.70806 12.9184 10.2327 13.3832C11.2733 14.3053 12.3379 15.2486 13.3675 16.1165ZM3.08791 7.894C3.08835 7.89466 3.0855 7.90008 3.07804 7.90827C3.08374 7.89743 3.08747 7.89334 3.08791 7.894ZM15.9448 15.6438C15.868 15.5829 15.7908 15.5213 15.7134 15.459C16.557 12.6914 16.9389 9.32323 16.9932 6.26644C17.5326 7.21493 18.1542 8.58225 18.7188 10.1111C19.4814 12.1761 20.0871 14.3925 20.2434 16.0524C20.3232 16.9004 20.2727 17.4831 20.1553 17.8106C20.129 17.8841 20.1036 17.9318 20.0847 17.9606C20.0755 17.9748 20.0681 17.9839 20.0634 17.9893C20.0613 17.9916 20.0596 17.9934 20.0584 17.9945C20.052 17.9962 20.0339 18 20 18C19.7225 18 19.2191 17.8473 18.4554 17.4095C17.7244 16.9903 16.8763 16.3823 15.9448 15.6438ZM17.0686 4.79309C17.0688 4.79359 17.0668 4.80005 17.0618 4.81094C17.0659 4.79804 17.0684 4.79259 17.0686 4.79309ZM16.1561 5.09103C16.1503 5.08754 16.1472 5.08537 16.1472 5.08515C16.1471 5.08494 16.15 5.08669 16.1561 5.09103Z" stroke="black" stroke-width="2"/>
+  //       </svg>`,
+  //     xl: ``,
+  //   },
+  //   category: ["basic"],
+  //   tags: ["mask", "face", "cover", "protect", "safety"],
+  // },
   {
     id: 22,
     name: "reload",
@@ -643,5 +643,130 @@ export const iconsData = [
     },
     category: ["basic"],
     tags: ["refresh", "reload", "update", "sync", "repeat"],
+  },
+  {
+    id: 23,
+    name: "eye",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#eye-lg-clip)">
+      <rect width="24" height="24" transform="translate(0.461548)" fill="none"/>
+      <path d="M12.3363 6C6.26663 6.89207 4.19019 8.24559 1.46155 12.4697C5.25549 16.109 7.17307 17.4904 12.3363 18.4695C17.1841 17.9125 19.4295 16.8181 23.0947 12.5144C19.8545 8.08364 17.6185 6.73888 12.3363 6Z" stroke="black" stroke-width="2"/>
+      <path d="M14.5455 12.3098C14.5455 13.7205 13.4164 14.8463 12.0455 14.8463C10.6745 14.8463 9.54547 13.7205 9.54547 12.3098C9.54547 10.8991 10.6745 9.7733 12.0455 9.7733C13.4164 9.7733 14.5455 10.8991 14.5455 12.3098Z" stroke="black" stroke-width="2"/>
+      </g>
+      <defs>
+      <clipPath id="eye-lg-clip">
+      <rect width="24" height="24" fill="none" transform="translate(0.461548)"/>
+      </clipPath>
+      </defs>
+      </svg>`,
+      xl: ``,
+    },
+    category: ["basic"],
+    tags: ["eye", "view", "see", "watch", "look", "observe"],
+  },
+
+  {
+    id: 24,
+    name: "not-allowed",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#forbidden-lg-clip)">
+      <rect width="24" height="24" transform="translate(0.461548)" fill="none"/>
+      <circle cx="12.4615" cy="12" r="11" stroke="black" stroke-width="2"/>
+      <path d="M4.66489 4.23945C6.38483 5.9594 10.6847 10.2593 14.1246 13.6992C17.5645 17.1391 19.5711 19.1457 20.1444 19.719" stroke="black" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <defs>
+      <clipPath id="forbidden-lg-clip">
+      <rect width="24" height="24" fill="none" transform="translate(0.461548)"/>
+      </clipPath>
+      </defs>
+      </svg>`,
+      xl: ``,
+    },
+    category: ["basic"],
+    tags: [
+      "forbidden",
+      "not allowed",
+      "prohibited",
+      "restricted",
+      "banned",
+      "denied",
+      "not allowed",
+      "not permitted",
+    ],
+  },
+  {
+    id: 25,
+    name: "microphone",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="24" height="24" fill="none"/>
+      <path d="M12.1734 22L12.1483 19" stroke="black" stroke-width="2"/>
+      <path d="M6 15C7.85602 17.2928 9.17937 18.1541 12 19C14.9793 18.1635 16.335 17.3778 18.0641 15.2824" stroke="black" stroke-width="2"/>
+      <rect x="10.484" y="4" width="3" height="10" rx="1" stroke="black" stroke-width="2"/>
+      </svg>`,
+      xl: ``,
+    },
+    category: ["basic"],
+    tags: ["microphone", "voice", "sound", "audio", "listen"],
+  },
+  {
+    id: 26,
+    name: "speaker",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#speaker-lg-clip)">
+      <rect width="24" height="24" transform="translate(0.461548)" fill="white"/>
+      <path d="M4.46155 20.84V3.48C4.46155 2.11033 5.57188 1 6.94155 1H15.5091H17.4815C18.8512 1 19.9615 2.11033 19.9615 3.48V5.65857V20.84C19.9615 22.2097 18.8512 23.32 17.4815 23.32H6.94155C5.57188 23.32 4.46155 22.2097 4.46155 20.84Z" stroke="black" stroke-width="2.48" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="12.2115" cy="16" r="3.75" stroke="black" stroke-width="2"/>
+      <circle cx="12.2115" cy="6.75" r="1" fill="black" stroke="black" stroke-width="1.5"/>
+      </g>
+      <defs>
+      <clipPath id="speaker-lg-clip">
+      <rect width="24" height="24" fill="white" transform="translate(0.461548)"/>
+      </clipPath>
+      </defs>
+      </svg>`,
+      xl: ``,
+    },
+    category: ["basic"],
+    tags: ["speaker", "sound", "audio", "listen"],
+  },
+  {
+    id: 27,
+    name: "video",
+    icon: {
+      xs: ``,
+      sm: ``,
+      md: ``,
+      lg: `<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#video-lg-clip)">
+      <rect width="24" height="24" transform="translate(0.461548)" fill="white"/>
+      <rect x="1.5665" y="5.37261" width="16.8951" height="13.3306" stroke="black" stroke-width="2"/>
+      <path d="M24.4615 7.25L18.4615 12.0528L24.4615 16.75V7.25Z" fill="black" stroke="black"/>
+      </g>
+      <defs>
+      <clipPath id="video-lg-clip">
+      <rect width="24" height="24" fill="white" transform="translate(0.461548)"/>
+      </clipPath>
+      </defs>
+      </svg>`,
+      xl: ``,
+    },
+    category: ["basic"],
+    tags: ["video", "movie", "film", "watch", "look", "observe"],
   },
 ];
