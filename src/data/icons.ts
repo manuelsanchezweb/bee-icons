@@ -46,7 +46,7 @@ export const iconsData = [
       sm: ``,
       md: ``,
       lg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <g clip-path="url(#clip-pig)">
+      <g clip-path="url(#clip-pig-lg)">
       <circle cx="7.48816" cy="8" r="1" fill="black"/>
       <ellipse cx="12.7997" cy="14.5" rx="0.799729" ry="1.5" fill="black"/>
       <ellipse cx="10.6521" cy="14.5" rx="0.799729" ry="1.5" fill="black"/>
@@ -57,7 +57,7 @@ export const iconsData = [
       <path d="M17.3934 14.5C17.3934 15.3179 16.9114 16.1685 15.9077 16.8576C14.9086 17.5436 13.4733 18 11.8393 18C10.2054 18 8.77006 17.5436 7.77094 16.8576C6.76729 16.1685 6.28528 15.3179 6.28528 14.5C6.28528 13.6821 6.76729 12.8315 7.77094 12.1424C8.77006 11.4564 10.2054 11 11.8393 11C13.4733 11 14.9086 11.4564 15.9077 12.1424C16.9114 12.8315 17.3934 13.6821 17.3934 14.5Z" stroke="black" stroke-width="2"/>
       </g>
       <defs>
-      <clipPath id="clip-pig">
+      <clipPath id="clip-pig-lg">
       <rect width="24" height="24" fill="none"/>
       </clipPath>
       </defs>
@@ -146,7 +146,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="donut-bite-clip">
-      <rect width="24" height="24" fill="white"/>
+      <rect width="24" height="24" fill="none"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -240,7 +240,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="search-sm-clip">
-      <rect width="12" height="12" fill="white"/>
+      <rect width="12" height="12" fill="none"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -251,7 +251,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="search-md-clip">
-      <rect width="16" height="16" fill="white"/>
+      <rect width="16" height="16" fill="none"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -262,7 +262,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="search-xl-clip">
-      <rect width="24" height="24" fill="white"/>
+      <rect width="24" height="24" fill="none"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -283,7 +283,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="alert-triangle-sm-clip">
-      <rect width="12" height="12" fill="white"/>
+      <rect width="12" height="12" fill="none"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -316,7 +316,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="alert-circle-sm-clip">
-      <rect width="12" height="12" fill="white"/>
+      <rect width="12" height="12" fill="none"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -328,7 +328,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="alert-circle-md-clip">
-      <rect width="16" height="16" fill="white"/>
+      <rect width="16" height="16" fill="none"/>
       </clipPath>
       </defs>
       </svg>
@@ -341,7 +341,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="alert-circle-lg-clip">
-      <rect width="24" height="24" fill="white"/>
+      <rect width="24" height="24" fill="none"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -365,7 +365,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="zoom-in-md-clip">
-      <rect width="16" height="16" fill="white"/>
+      <rect width="16" height="16" fill="none"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -378,7 +378,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="zoom-in-lg-clip">
-      <rect width="24" height="24" fill="white"/>
+      <rect width="24" height="24" fill="none"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -401,7 +401,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="zoom-out-md-clip">
-      <rect width="16" height="16" fill="white"/>
+      <rect width="16" height="16" fill="none"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -413,7 +413,7 @@ export const iconsData = [
       </g>
       <defs>
       <clipPath id="zoom-out-lg-clip">
-      <rect width="24" height="24" fill="white"/>
+      <rect width="24" height="24" fill="none"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -729,14 +729,14 @@ export const iconsData = [
       md: ``,
       lg: `<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#speaker-lg-clip)">
-      <rect width="24" height="24" transform="translate(0.461548)" fill="white"/>
+      <rect width="24" height="24" transform="translate(0.461548)" fill="none"/>
       <path d="M4.46155 20.84V3.48C4.46155 2.11033 5.57188 1 6.94155 1H15.5091H17.4815C18.8512 1 19.9615 2.11033 19.9615 3.48V5.65857V20.84C19.9615 22.2097 18.8512 23.32 17.4815 23.32H6.94155C5.57188 23.32 4.46155 22.2097 4.46155 20.84Z" stroke="black" stroke-width="2.48" stroke-linecap="round" stroke-linejoin="round"/>
       <circle cx="12.2115" cy="16" r="3.75" stroke="black" stroke-width="2"/>
       <circle cx="12.2115" cy="6.75" r="1" fill="black" stroke="black" stroke-width="1.5"/>
       </g>
       <defs>
       <clipPath id="speaker-lg-clip">
-      <rect width="24" height="24" fill="white" transform="translate(0.461548)"/>
+      <rect width="24" height="24" fill="none" transform="translate(0.461548)"/>
       </clipPath>
       </defs>
       </svg>`,
@@ -754,13 +754,13 @@ export const iconsData = [
       md: ``,
       lg: `<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#video-lg-clip)">
-      <rect width="24" height="24" transform="translate(0.461548)" fill="white"/>
+      <rect width="24" height="24" transform="translate(0.461548)" fill="none"/>
       <rect x="1.5665" y="5.37261" width="16.8951" height="13.3306" stroke="black" stroke-width="2"/>
       <path d="M24.4615 7.25L18.4615 12.0528L24.4615 16.75V7.25Z" fill="black" stroke="black"/>
       </g>
       <defs>
       <clipPath id="video-lg-clip">
-      <rect width="24" height="24" fill="white" transform="translate(0.461548)"/>
+      <rect width="24" height="24" fill="none" transform="translate(0.461548)"/>
       </clipPath>
       </defs>
       </svg>`,
