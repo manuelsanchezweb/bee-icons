@@ -6,7 +6,7 @@
 
 <img src="https://img.shields.io/github/contributors/manuelsanchezweb/bee-icons" alt="Iconos">
 <img src="https://img.shields.io/github/issues-raw/manuelsanchezweb/bee-icons" alt="Iconos">
-<img src="https://img.shields.io/badge/26-icons%20available-blue" alt="Iconos">
+<img src="https://img.shields.io/badge/82-icons%20available-blue" alt="Iconos">
 
 Your new favourite icon pool!
 
@@ -35,7 +35,7 @@ All the icons are completely made by us from the very first pixel and free to us
 - [ ] Create functions that get the icon by name, and also get other icon sizes by name
 - [x] Create search filter function
 - [x] Create the icon Hive Cell component
-- [ ] Create a simple pagination system (show max number of icon per view)
+- [x] Create a simple pagination system (show max number of icon per view)
 - [x] Click the icon will download automatically 24x24 version (later we will have a modal)
 - [ ] Add glassmorphism background
 - [x] Add filter by category
