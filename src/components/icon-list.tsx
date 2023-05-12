@@ -20,7 +20,7 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
 
   const initialState = {
     currentPage: 1,
-    pageSize: 20,
+    pageSize: 21,
     total: displayedIcons.length,
   }
   const [state, actions] = usePagination(initialState)
