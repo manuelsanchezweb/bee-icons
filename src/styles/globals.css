@@ -22,7 +22,7 @@
   --color-contrast: #ffffff;
 }
 
-body[data-theme="dark"] {
+body[data-theme='dark'] {
   --color-text: #ffffff;
   --color-contrast: #161616;
 }
@@ -57,7 +57,7 @@ body[data-theme="dark"] {
 }
 
 body {
-  font-family: "Satoshi", sans-serif;
+  font-family: 'Satoshi', sans-serif;
   color: var(--color-text);
   background-color: var(--color-contrast);
   backdrop-filter: blur(205px);

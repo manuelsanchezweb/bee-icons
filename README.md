@@ -24,11 +24,11 @@ And also we can use them lately in our projects.
 
 We got really inspired by bigger projects like [thenounproject](https://thenounproject.com/) and [tabler-icons](https://tabler-icons.io/), and decided to go create something as cool.
 
-By the way, **if you want to give a try to mindful creating icons, you can always create a PR**. We will take a look carefully!
+By the way, **if you want to give a try to mindful creating icons, you can always create a PR**. Just add some icons in the file `icons.json`. We will take a look carefully!
 
 All the icons are completely made by us from the very first pixel and free to use it, **either in personal or commercial projects**.
 
-## 🪜 Next Steps (April 2023)
+## 🪜 Next Steps
 
 - [x] Add thumbnail for sharing the app
 - [x] Create component that renders the icon (24x24) by default

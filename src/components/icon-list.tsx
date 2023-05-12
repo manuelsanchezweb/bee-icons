@@ -1,56 +1,73 @@
-import { useTheme } from "@/context/ThemeContext";
-import { iconsData } from "@/data/icons";
-import { Icon } from "@/types/types";
+import { useTheme } from '@/context/ThemeContext'
+import usePagination from '@/hooks/usePagination'
+import { Icon } from '@/types/types'
 import {
   downloadSVG,
   filterIconsByCategory,
   filterIconsBySearchTerm,
   getUniqueCategories,
-} from "@/utils/utils";
-import { animate, stagger } from "motion";
-import { useEffect, useState } from "react";
+} from '@/utils/utils'
+import { animate, stagger } from 'motion'
+import { useEffect, useState } from 'react'
 
-const IconList = () => {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
-  const [icons, setIcons] = useState<Icon[]>(iconsData);
-  const [selectedTerm, setSelectedTerm] = useState<string>("");
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
+const IconList = ({ icons }: { icons: Icon[] }) => {
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
+  const [displayedIcons, setDisplayedIcons] = useState<Icon[]>(icons)
+  const [selectedTerm, setSelectedTerm] = useState<string>('')
+  const [selectedCategory, setSelectedCategory] = useState<string>('')
+  const allCategories = getUniqueCategories(icons)
 
-  const allCategories = getUniqueCategories(iconsData);
+  const initialState = {
+    currentPage: 1,
+    pageSize: 20,
+    total: displayedIcons.length,
+  }
+  const [state, actions] = usePagination(initialState)
+
+  const isPrevDisabled = state.currentPage === 1
+  const isNextDisabled =
+    state.currentPage === Math.ceil(displayedIcons.length / state.pageSize) ||
+    displayedIcons.length === 0
+
+  const start = (state.currentPage - 1) * state.pageSize // 0 en la primera
+  const end = state.currentPage * state.pageSize // 10 en la primera (excluye el último numero)
+  const displayedIconsPaginated = displayedIcons.slice(start, end)
 
   useEffect(() => {
-    let filteredIcons = iconsData;
+    let filteredIcons = icons
 
-    if (selectedCategory !== "") {
-      filteredIcons = filterIconsByCategory(filteredIcons, selectedCategory);
+    if (selectedCategory !== '') {
+      filteredIcons = filterIconsByCategory(filteredIcons, selectedCategory)
     }
 
-    if (selectedTerm !== "") {
-      filteredIcons = filterIconsBySearchTerm(filteredIcons, selectedTerm);
+    if (selectedTerm !== '') {
+      filteredIcons = filterIconsBySearchTerm(filteredIcons, selectedTerm)
     }
 
-    setIcons(filteredIcons);
+    actions.jumpToPage(1)
 
-    const li = document.querySelectorAll("li");
-    if (!li[0]) return;
+    setDisplayedIcons(filteredIcons)
+
+    const li = document.querySelectorAll('li')
+    if (!li[0]) return
 
     animate(
       li,
       { opacity: [0, 1], scale: [0, 1] },
-      { delay: stagger(0.1), easing: "ease-in-out" }
-    );
-  }, [selectedTerm, selectedCategory]);
+      { delay: stagger(0.1), easing: 'ease-in-out' }
+    )
+  }, [selectedTerm, selectedCategory])
 
   const searchTerm = (event: any) => {
-    setSelectedTerm(event.target.value);
-  };
+    setSelectedTerm(event.target.value)
+  }
 
   return (
     <div className="list-shadow px-8 pt-12 pb-24 rounded-[40px] mb-24">
       <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-16 ">
         <input
-          className="ml-2 pl-2 h-[42px] rounded-md bee-blue-border md:w-[460px]"
+          className="ml-2 pl-2 h-[42px] rounded-md bee-blue-border md:w-[460px] dark:text-black"
           type="text"
           name="search"
           defaultValue={selectedTerm}
@@ -76,29 +93,60 @@ const IconList = () => {
         </div>
       </div>
 
-      <ul className="flex flex-wrap items-start gap-8 md:gap-x-24 md:min-h-[220px]">
-        {icons.map((icon, index) => (
-          <li
-            key={index}
-            className="flex flex-col items-center justify-center text-center gap-2"
-          >
-            <button
-              onClick={() => downloadSVG(icon, "lg")}
-              className="hexa-shape hexa-shadow bg-gray-100 flex flex-col items-center justify-center min-w-[72px] w-[72px] min-h-[64px] transition-all hover:scale-110 focus:scale-110 focus:outline-none hover:bg-[var(--bee-blue)]"
-            >
-              <div dangerouslySetInnerHTML={{ __html: icon.icon.lg }} />
-            </button>
-            <span
-              onClick={() => downloadSVG(icon, "lg")}
-              className={`{${isDark} ? "bee-blue : "text-white"} text-xs cursor-pointer font-medium`}
-            >
-              {icon.name}
-            </span>
-          </li>
-        ))}
+      <ul
+        className={`flex flex-wrap items-start gap-8 md:gap-x-24 md:min-h-[370px] ${
+          displayedIconsPaginated.length > 0 ? '' : 'md:items-center'
+        }  justify-center md:justify-start`}
+      >
+        {displayedIconsPaginated.length > 0 ? (
+          displayedIconsPaginated
+            .sort((a, b) => b.id - a.id)
+            .map((icon, index) => (
+              <li
+                key={index}
+                className="flex flex-col items-center justify-center text-center gap-2"
+              >
+                <button
+                  onClick={() => downloadSVG(icon, 'lg')}
+                  className="hexa-shape hexa-shadow bg-gray-100 flex flex-col items-center justify-center min-w-[72px] w-[72px] min-h-[64px] transition-all hover:scale-110 focus:scale-110 focus:outline-none hover:bg-[var(--bee-blue)]"
+                >
+                  <div dangerouslySetInnerHTML={{ __html: icon.icon.lg }} />
+                </button>
+                <span
+                  onClick={() => downloadSVG(icon, 'lg')}
+                  className={`{${isDark} ? "bee-blue : "text-white"} text-[0.60rem] max-w-[65px] cursor-pointer font-medium`}
+                >
+                  {icon.name}
+                </span>
+              </li>
+            ))
+        ) : (
+          <p className="text-center h-full flex justify-center items-center w-full">
+            'Ups! No icons found. Try another search term.'
+          </p>
+        )}
       </ul>
-    </div>
-  );
-};
 
-export default IconList;
+      <div className="flex flex-col mt-12">
+        <div className="flex justify-center gap-8">
+          <button
+            onClick={actions.prevPage}
+            disabled={isPrevDisabled}
+            className="disabled:text-gray-300 disabled:pointer-events-none"
+          >
+            Previous page
+          </button>
+          <button
+            onClick={actions.nextPage}
+            disabled={isNextDisabled}
+            className="disabled:text-gray-300 disabled:pointer-events-none"
+          >
+            Next page
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default IconList
