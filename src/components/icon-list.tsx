@@ -8,7 +8,7 @@ import {
   getUniqueCategories,
 } from '@/utils/utils'
 import { animate, stagger } from 'motion'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 const IconList = ({ icons }: { icons: Icon[] }) => {
   const { theme } = useTheme()
@@ -16,7 +16,7 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
   const [displayedIcons, setDisplayedIcons] = useState<Icon[]>(icons)
   const [selectedTerm, setSelectedTerm] = useState<string>('')
   const [selectedCategory, setSelectedCategory] = useState<string>('')
-  const allCategories = getUniqueCategories(icons)
+  const allCategories = useMemo(() => getUniqueCategories(icons), [icons])
 
   const initialState = {
     currentPage: 1,
@@ -30,9 +30,11 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
     state.currentPage === Math.ceil(displayedIcons.length / state.pageSize) ||
     displayedIcons.length === 0
 
-  const start = (state.currentPage - 1) * state.pageSize // 0 en la primera
-  const end = state.currentPage * state.pageSize // 10 en la primera (excluye el último numero)
-  const displayedIconsPaginated = displayedIcons.slice(start, end)
+  const displayedIconsPaginated = useMemo(() => {
+    const start = (state.currentPage - 1) * state.pageSize
+    const end = state.currentPage * state.pageSize
+    return displayedIcons.slice(start, end)
+  }, [displayedIcons, state.currentPage, state.pageSize])
 
   useEffect(() => {
     let filteredIcons = icons
@@ -59,9 +61,9 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
     )
   }, [selectedTerm, selectedCategory])
 
-  const searchTerm = (event: any) => {
-    setSelectedTerm(event.target.value)
-  }
+  const searchTerm = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+    setSelectedTerm((e.target as HTMLInputElement).value)
+  }, [])
 
   return (
     <div className="list-shadow px-8 pt-12 pb-24 rounded-[40px] mb-24">
