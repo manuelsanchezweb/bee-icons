@@ -3,6 +3,10 @@
   "version": "1.0.5",
   "private": true,
   "description": "An original Icon Pool for your next project!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelsanchezweb/bee-icons.git"
+  },
   "author": "Manuel Sánchez",
   "bugs": {
     "url": "https://github.com/manuelsanchezweb/bee-icons/issues"
