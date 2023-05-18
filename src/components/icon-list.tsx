@@ -116,7 +116,7 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
                 </button>
                 <span
                   onClick={() => downloadSVG(icon, 'lg')}
-                  className={`{${isDark} ? "bee-blue : "text-white"} text-[0.60rem] max-w-[65px] cursor-pointer font-medium`}
+                  className={`{${isDark} ? "bee-blue : "text-white"} text-[0.60rem] max-w-[65px] h-[20px] cursor-pointer font-medium`}
                 >
                   {icon.name}
                 </span>
