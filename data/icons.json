@@ -1336,5 +1336,31 @@
       "alert",
       "warning"
     ]
+  },
+  {
+    "id": 90,
+    "name": "heptagon",
+    "icon": {
+      "xs": "",
+      "sm": "",
+      "md": "",
+      "lg": "<svg class='bee bee-icons' width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5.21002 6.61771L12.1606 3.2705L19.1111 6.61771L20.8278 14.1388L16.0178 20.1703H8.3033L3.49337 14.1388L5.21002 6.61771Z' stroke='currentColor' stroke-width='2'/></svg>",
+      "xl": ""
+    },
+    "category": ["basic"],
+    "tags": ["heptagon", "shape"]
+  },
+  {
+    "id": 91,
+    "name": "heptagon-fill",
+    "icon": {
+      "xs": "",
+      "sm": "",
+      "md": "",
+      "lg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12.1606 2.16058L19.9789 5.92569L21.9098 14.3858L16.4994 21.1703H7.82173L2.41129 14.3858L4.34225 5.92569L12.1606 2.16058Z' fill='currentColor'/></svg>",
+      "xl": ""
+    },
+    "category": ["basic"],
+    "tags": ["heptagon", "shape", "fill"]
   }
 ]
