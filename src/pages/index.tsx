@@ -8,6 +8,8 @@ import { Icon } from '@/types/types'
 import Head from 'next/head'
 
 export default function Home({ icons }: { icons: Icon[] }) {
+  if (!icons) return null
+
   return (
     <>
       <Head>
