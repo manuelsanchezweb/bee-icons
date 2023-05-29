@@ -30,7 +30,7 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
     state.currentPage === Math.ceil(displayedIcons.length / state.pageSize) ||
     displayedIcons.length === 0
 
-  const displayedIconsPaginated = useMemo(() => {
+  const displayedIconsPaginated: Icon[] = useMemo(() => {
     const start = (state.currentPage - 1) * state.pageSize
     const end = state.currentPage * state.pageSize
     return displayedIcons.slice(start, end)
@@ -59,6 +59,8 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
       { opacity: [0, 1], scale: [0, 1] },
       { delay: stagger(0.1), easing: 'ease-in-out' }
     )
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedTerm, selectedCategory])
 
   const searchTerm = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {

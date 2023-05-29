@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 interface PaginationState {
   currentPage: number
@@ -17,25 +17,25 @@ export default function usePagination(
 ): [PaginationState, PaginationActions] {
   const [state, setState] = useState(initialState)
 
-  const nextPage = () => {
+  const nextPage = useCallback(() => {
     setState((prevState) => {
       const currentPage = prevState.currentPage + 1
       return { ...prevState, currentPage }
     })
-  }
+  }, [])
 
-  const prevPage = () => {
+  const prevPage = useCallback(() => {
     setState((prevState) => {
       const currentPage = prevState.currentPage - 1
       return { ...prevState, currentPage }
     })
-  }
+  }, [])
 
-  const jumpToPage = (page: number) => {
+  const jumpToPage = useCallback((page: number) => {
     setState((prevState) => {
       return { ...prevState, currentPage: page }
     })
-  }
+  }, [])
 
   return [state, { nextPage, prevPage, jumpToPage }]
 }
