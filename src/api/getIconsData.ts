@@ -5,7 +5,7 @@ export async function getIconsData(): Promise<Icon[]> {
 
   const res = await fetch(url)
   const data = await res.json()
-  console.log(data)
+  // console.log(data)
 
   return []
 }

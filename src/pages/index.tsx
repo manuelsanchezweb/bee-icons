@@ -37,7 +37,7 @@ export default function Home({ icons }: { icons: Icon[] }) {
         <Hero />
         <div className="flex flex-col items-center my-10 md:my-24 text-center gap-4">
           <h2 className="font-black text-4xl">
-            +85 cool icons already made their way to the hive!
+            +90 cool icons already made their way to the hive!
           </h2>
           <div className="flex flex-col items-center gap-4">
             <h3>Some of the new incorporations:</h3>
@@ -203,6 +203,12 @@ export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const icons = await getIconsData()
+
+  if (!icons) {
+    return {
+      notFound: true,
+    }
+  }
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
