@@ -42,7 +42,11 @@ All the icons are completely made by us from the very first pixel and free to us
 
 ## How to collaborate on the project
 
-Please, check [Contributing Guidelines](CONTRIBUTING.md)
+Please, check [Contributing Guidelines](CONTRIBUTING.md).
+
+## API
+
+If you want to play a bit with the API, take a look [here](https://app.swaggerhub.com/apis/manuelsanchez2/bee-icons_api/1.0.0).
 
 ## 📧 Contact
 
