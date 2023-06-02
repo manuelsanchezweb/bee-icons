@@ -27,6 +27,10 @@ body[data-theme='dark'] {
   --color-contrast: #161616;
 }
 
+body[data-theme='dark'] svg {
+  color: var(--bee-black) !important;
+}
+
 .bee-blue {
   color: var(--bee-blue) !important;
 }
