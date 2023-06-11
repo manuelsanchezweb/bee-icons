@@ -104,7 +104,7 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
       >
         {displayedIconsPaginated.length > 0 ? (
           displayedIconsPaginated
-            .sort((a, b) => b.id - a.id)
+            .sort((a, b) => a.name.localeCompare(b.name))
             .map((icon, index) => (
               <li
                 key={index}
