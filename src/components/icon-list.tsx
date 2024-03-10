@@ -98,7 +98,7 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
       </div>
 
       <ul
-        className={`flex flex-wrap items-start gap-8 md:gap-x-24 md:min-h-[370px] ${
+        className={`flex flex-wrap items-start gap-8 md:gap-x-24 ${
           displayedIconsPaginated.length > 0 ? '' : 'md:items-center'
         }  justify-center md:justify-start`}
       >
@@ -133,20 +133,24 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
 
       <div className="flex flex-col mt-12">
         <div className="flex justify-center gap-8">
-          <button
-            onClick={actions.prevPage}
-            disabled={isPrevDisabled}
-            className="disabled:text-gray-300 disabled:pointer-events-none"
-          >
-            Previous page
-          </button>
-          <button
-            onClick={actions.nextPage}
-            disabled={isNextDisabled}
-            className="disabled:text-gray-300 disabled:pointer-events-none"
-          >
-            Next page
-          </button>
+          {!isPrevDisabled && (
+            <button
+              onClick={actions.prevPage}
+              disabled={isPrevDisabled}
+              className="disabled:text-gray-300 disabled:pointer-events-none"
+            >
+              Previous page
+            </button>
+          )}
+          {!isNextDisabled && (
+            <button
+              onClick={actions.nextPage}
+              disabled={isNextDisabled}
+              className="disabled:text-gray-300 disabled:pointer-events-none"
+            >
+              Next page
+            </button>
+          )}
         </div>
       </div>
     </div>

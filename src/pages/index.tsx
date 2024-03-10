@@ -39,8 +39,9 @@ export default function Home({ icons }: { icons: Icon[] }) {
         <Navigation />
         <Hero />
         <div className="flex flex-col items-center my-10 md:my-24 text-center gap-4">
+          <small>Last updated: March 2024</small>
           <h2 className="font-black text-4xl">
-            +110 cool icons already made their way to the hive!
+            +140 cool icons already made their way to the hive!
           </h2>
           <div className="flex flex-col items-center gap-4">
             <h3>Some of the new incorporations:</h3>

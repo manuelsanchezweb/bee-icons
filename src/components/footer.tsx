@@ -1,4 +1,5 @@
 const Footer = () => {
+  const currentYear = new Date().getFullYear()
   return (
     <footer className="bg-[var(--bee-black)] bee-white py-2">
       <div className="flex flex-col items-center md:items-end gap-4 container">
@@ -13,7 +14,7 @@ const Footer = () => {
             href="https://github.com/manuelsanchezweb/bee-icons"
             title="BeeIcons on GitHub"
           >
-            BeeIcons 2023 © All rights reserved.
+            BeeIcons {currentYear} © All rights reserved.
           </a>
         </div>
 
