@@ -28,7 +28,7 @@ body[data-theme='dark'] {
 }
 
 body[data-theme='dark'] svg {
-  color: var(--bee-black) !important;
+  color: var(--bee-black);
 }
 
 .bee-blue {

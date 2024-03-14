@@ -159,7 +159,9 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
                 onClick={() =>
                   setActiveIcon(activeIcon === icon.name ? null : icon.name)
                 }
-                className={`{${isDark} ? "bee-blue : "text-white"} text-[0.60rem] max-w-[65px] h-[20px] cursor-pointer font-medium`}
+                className={`${
+                  isDark ? 'text-white' : 'text-black'
+                } text-[0.60rem] max-w-[65px] h-[20px] cursor-pointer font-medium`}
               >
                 {icon.name}
               </span>
@@ -180,7 +182,9 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
             className="disabled:text-gray-300 disabled:pointer-events-none"
           >
             <svg
-              className="bee bee-icons"
+              className={`${
+                isDark ? '!text-white' : ''
+              } disabled:text-gray-300 disabled:pointer-events-none`}
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -240,10 +244,12 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
           <button
             onClick={actions.nextPage}
             disabled={isNextDisabled}
-            className="disabled:text-gray-300 disabled:pointer-events-none"
+            className={`disabled:text-gray-300 disabled:pointer-events-none`}
           >
             <svg
-              className="bee bee-icons"
+              className={`${
+                isDark ? '!text-white' : ''
+              } disabled:text-gray-300 disabled:pointer-events-none`}
               width="24"
               height="24"
               viewBox="0 0 24 24"
