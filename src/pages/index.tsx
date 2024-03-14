@@ -7,9 +7,12 @@ import { Navigation } from '@/components/navigation'
 import { Icon } from '@/types/types'
 import { downloadSVG } from '@/utils/utils'
 import Head from 'next/head'
+import { useRef } from 'react'
+import { Toaster } from 'react-hot-toast'
 
 export default function Home({ icons }: { icons: Icon[] }) {
   if (!icons) return null
+  const copyIcons = [...icons]
 
   return (
     <>
@@ -46,7 +49,7 @@ export default function Home({ icons }: { icons: Icon[] }) {
           <div className="flex flex-col items-center gap-4">
             <h3>Some of the new incorporations:</h3>
             <div className="flex flex-wrap items-center justify-center gap-2">
-              {icons
+              {copyIcons
                 .sort((a, b) => b.id - a.id)
                 .slice(0, 10)
                 .map((icon: Icon) => (
@@ -64,6 +67,13 @@ export default function Home({ icons }: { icons: Icon[] }) {
           <p className="text-2xl">Stay tuned to see what is about to come!</p>
         </div>
 
+        <Toaster
+          containerStyle={{
+            position: 'relative',
+          }}
+          containerClassName="fixed"
+          position="top-right"
+        />
         <IconList icons={icons} />
 
         <Contact />

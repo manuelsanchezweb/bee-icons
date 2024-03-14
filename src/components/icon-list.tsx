@@ -2,6 +2,7 @@ import { useTheme } from '@/context/ThemeContext'
 import usePagination from '@/hooks/usePagination'
 import { Icon } from '@/types/types'
 import {
+  copyToClipboard,
   downloadSVG,
   filterIconsByCategory,
   filterIconsBySearchTerm,
@@ -9,10 +10,12 @@ import {
 } from '@/utils/utils'
 import { animate, stagger } from 'motion'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import toast from 'react-hot-toast'
 
 const IconList = ({ icons }: { icons: Icon[] }) => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
+  const [activeIcon, setActiveIcon] = useState<string | null>(null)
   const [displayedIcons, setDisplayedIcons] = useState<Icon[]>(icons)
   const [selectedTerm, setSelectedTerm] = useState<string>('')
   const [selectedCategory, setSelectedCategory] = useState<string>('')
@@ -103,27 +106,54 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
         }  justify-center md:justify-start`}
       >
         {displayedIconsPaginated.length > 0 ? (
-          displayedIconsPaginated
-            .sort((a, b) => a.name.localeCompare(b.name))
-            .map((icon, index) => (
-              <li
-                key={index}
-                className="flex flex-col items-center justify-center text-center gap-2"
+          displayedIconsPaginated.map((icon, index) => (
+            <li
+              key={index}
+              className="flex flex-col items-center justify-center text-center gap-2 relative"
+            >
+              <button
+                onClick={() =>
+                  setActiveIcon(activeIcon === icon.name ? null : icon.name)
+                }
+                className="hexa-shape hexa-shadow bg-gray-100 flex flex-col items-center justify-center min-w-[72px] w-[72px] min-h-[64px] transition-all hover:scale-110 focus:scale-110 focus:outline-none hover:bg-[var(--bee-blue)]"
               >
-                <button
-                  onClick={() => downloadSVG(icon, 'lg')}
-                  className="hexa-shape hexa-shadow bg-gray-100 flex flex-col items-center justify-center min-w-[72px] w-[72px] min-h-[64px] transition-all hover:scale-110 focus:scale-110 focus:outline-none hover:bg-[var(--bee-blue)]"
-                >
-                  <div dangerouslySetInnerHTML={{ __html: icon.icon.lg }} />
-                </button>
-                <span
-                  onClick={() => downloadSVG(icon, 'lg')}
-                  className={`{${isDark} ? "bee-blue : "text-white"} text-[0.60rem] max-w-[65px] h-[20px] cursor-pointer font-medium`}
-                >
-                  {icon.name}
-                </span>
-              </li>
-            ))
+                <div dangerouslySetInnerHTML={{ __html: icon.icon.lg }} />
+              </button>
+              {activeIcon === icon.name && (
+                <div className="dropdown-menu w-[100px] absolute top-0 left-1/2 -translate-x-1/2 lg:-right-24 lg:left-auto lg:top-0 lg:translate-x-0 shadow-sm border border-solid border-black bg-white flex flex-col z-[200]">
+                  <button
+                    className="flex gap-2 items-center hover:bg-gray-200 py-1 px-2"
+                    onClick={() => {
+                      copyToClipboard(icon, 'lg')
+                      setActiveIcon(null)
+
+                      toast.success('Copied to clipboard!', {
+                        icon: '📋',
+                      })
+                    }}
+                  >
+                    <IconCopy extraClasses="h-3 w-3" />
+                    <span className="text-[10px] text-black">Copy</span>
+                  </button>
+                  <button
+                    className="flex gap-2 items-center hover:bg-gray-200 py-1 px-2"
+                    onClick={() => downloadSVG(icon, 'lg')}
+                  >
+                    <IconDownload extraClasses="h-3 w-3" />
+                    <span className="text-[10px] text-black">Download</span>
+                  </button>
+                </div>
+              )}
+              <span
+                onClick={() =>
+                  setActiveIcon(activeIcon === icon.name ? null : icon.name)
+                }
+                className={`{${isDark} ? "bee-blue : "text-white"} text-[0.60rem] max-w-[65px] h-[20px] cursor-pointer font-medium`}
+              >
+                {icon.name}
+              </span>
+            </li>
+          ))
         ) : (
           <p className="text-center h-full flex justify-center items-center w-full">
             'Ups! No icons found. Try another search term.'
@@ -158,3 +188,71 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
 }
 
 export default IconList
+
+const IconDownload = ({ extraClasses }: { extraClasses?: string }) => {
+  return (
+    <svg
+      className={extraClasses}
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#download-lg-clip)">
+        <path
+          d="M7.05457 11.7185L12.0513 17.0845M12.0513 17.0845L17.0482 11.7185M12.0513 17.0845V3.09265"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        ></path>
+        <path
+          d="M4 19V20C4 20.5523 4.44772 21 5 21H19C19.5523 21 20 20.5523 20 20V19"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        ></path>
+      </g>
+      <defs>
+        <clipPath id="download-lg-clip">
+          <rect width="24" height="24" fill="none"></rect>
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
+const IconCopy = ({ extraClasses }: { extraClasses?: string }) => {
+  return (
+    <svg
+      className={extraClasses}
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#copy-lg-clip)">
+        <path
+          d="M9 16V4C9 3.44772 9.44771 3 10 3H16.5507C16.804 3 17.048 3.09619 17.2332 3.26914L19.6825 5.55651C19.885 5.74563 20 6.01029 20 6.28737V16C20 16.5523 19.5523 17 19 17H10C9.44772 17 9 16.5523 9 16Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M7.91774 8H5C4.44772 8 4 8.44772 4 9V21C4 21.5523 4.44772 22 5 22H14C14.5523 22 15 21.5523 15 21V17.9556"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="copy-lg-clip">
+          {' '}
+          <rect width="24" height="24" fill="none" />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
