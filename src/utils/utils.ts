@@ -57,3 +57,11 @@ export const copyToClipboard = (icon: Icon, size: 'lg') => {
   const svgContent = icon.icon[size]
   navigator.clipboard.writeText(svgContent)
 }
+
+export const iconIssueSubject = encodeURIComponent('Issue with the icon ')
+export const iconIssueBody =
+  encodeURIComponent(`Hi, your library is super cool, I just found this thing regarding this icon:
+
+[[Please describe the issue here...]]
+
+`)

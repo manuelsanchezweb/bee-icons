@@ -7,6 +7,8 @@ import {
   filterIconsByCategory,
   filterIconsBySearchTerm,
   getUniqueCategories,
+  iconIssueBody,
+  iconIssueSubject,
 } from '@/utils/utils'
 import { animate, stagger } from 'motion'
 import { useCallback, useEffect, useMemo, useState } from 'react'
@@ -120,7 +122,7 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
                 <div dangerouslySetInnerHTML={{ __html: icon.icon.lg }} />
               </button>
               {activeIcon === icon.name && (
-                <div className="dropdown-menu w-[100px] absolute top-0 left-1/2 -translate-x-1/2 lg:-right-24 lg:left-auto lg:top-0 lg:translate-x-0 shadow-sm border border-solid border-black bg-white flex flex-col z-[200]">
+                <div className="dropdown-menu w-[120px] absolute top-0 left-1/2 -translate-x-1/2 lg:-right-24 lg:left-auto lg:top-0 lg:translate-x-0 shadow-sm border border-solid border-black bg-white flex flex-col z-[200]">
                   <button
                     className="flex gap-2 items-center hover:bg-gray-200 py-1 px-2"
                     onClick={() => {
@@ -142,6 +144,15 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
                     <IconDownload extraClasses="h-3 w-3" />
                     <span className="text-[10px] text-black">Download</span>
                   </button>
+                  <a
+                    className="flex gap-2 items-center hover:bg-gray-200 py-1 px-2"
+                    href={`mailto:manusansan22@gmail.com?subject=${iconIssueSubject}${icon.name}_id-${icon.id}&body=${iconIssueBody}`}
+                  >
+                    <IconIssue extraClasses="h-3 w-3" />
+                    <span className="text-[10px] text-black">
+                      Report an issue
+                    </span>
+                  </a>
                 </div>
               )}
               <span
@@ -163,24 +174,91 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
 
       <div className="flex flex-col mt-12">
         <div className="flex justify-center gap-8">
-          {!isPrevDisabled && (
-            <button
-              onClick={actions.prevPage}
-              disabled={isPrevDisabled}
-              className="disabled:text-gray-300 disabled:pointer-events-none"
+          <button
+            onClick={actions.prevPage}
+            disabled={isPrevDisabled}
+            className="disabled:text-gray-300 disabled:pointer-events-none"
+          >
+            <svg
+              className="bee bee-icons"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              Previous page
+              <path
+                d="M15.0673 19.1347L7.93266 12L15.0673 4.86534"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+
+          <button
+            className={state.currentPage === 1 ? 'font-bold' : ''}
+            onClick={() => actions.jumpToPage(1)}
+          >
+            1
+          </button>
+
+          {state.currentPage > 2 && (
+            <button onClick={actions.prevPage}>...</button>
+          )}
+
+          {state.currentPage > 1 &&
+            state.currentPage <
+              Math.ceil(displayedIcons.length / state.pageSize) && (
+              <span className={'font-bold'}>{state.currentPage}</span>
+            )}
+
+          {state.currentPage <
+            Math.ceil(displayedIcons.length / state.pageSize - 1) && (
+            <button onClick={actions.nextPage}>...</button>
+          )}
+
+          {displayedIcons.length > state.pageSize && (
+            <button
+              className={
+                state.currentPage ===
+                Math.ceil(displayedIcons.length / state.pageSize)
+                  ? 'font-bold'
+                  : ''
+              }
+              onClick={() =>
+                actions.jumpToPage(
+                  Math.ceil(displayedIcons.length / state.pageSize)
+                )
+              }
+            >
+              {Math.ceil(displayedIcons.length / state.pageSize)}
             </button>
           )}
-          {!isNextDisabled && (
-            <button
-              onClick={actions.nextPage}
-              disabled={isNextDisabled}
-              className="disabled:text-gray-300 disabled:pointer-events-none"
+
+          <button
+            onClick={actions.nextPage}
+            disabled={isNextDisabled}
+            className="disabled:text-gray-300 disabled:pointer-events-none"
+          >
+            <svg
+              className="bee bee-icons"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              Next page
-            </button>
-          )}
+              <path
+                d="M8.43268 4.86534L15.5673 12L8.43268 19.1347"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -251,6 +329,46 @@ const IconCopy = ({ extraClasses }: { extraClasses?: string }) => {
         <clipPath id="copy-lg-clip">
           {' '}
           <rect width="24" height="24" fill="none" />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
+const IconIssue = ({ extraClasses }: { extraClasses?: string }) => {
+  return (
+    <svg
+      className={extraClasses}
+      width="24"
+      height="25"
+      viewBox="0 0 24 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#alert-circle-lg-clip)">
+        <path
+          d="M12.9951 17.1915C12.9951 16.6419 12.5496 16.1964 12 16.1964C11.4504 16.1964 11.0049 16.6419 11.0049 17.1915C11.0049 17.7411 11.4504 18.1866 12 18.1866C12.5496 18.1866 12.9951 17.7411 12.9951 17.1915Z"
+          fill="currentColor"
+        />
+        <path
+          d="M13 13.1964C13 13.7487 12.5523 14.1964 12 14.1964C11.4477 14.1964 11 13.7487 11 13.1964V7.19641C11 6.64413 11.4477 6.19641 12 6.19641C12.5523 6.19641 13 6.64413 13 7.19641V13.1964Z"
+          fill="currentColor"
+        />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 24.1866C18.6274 24.1866 24 18.814 24 12.1866C24 5.55917 18.6274 0.186584 12 0.186584C5.37258 0.186584 0 5.55917 0 12.1866C0 18.814 5.37258 24.1866 12 24.1866ZM12 22.1866C17.5228 22.1866 22 17.7094 22 12.1866C22 6.66374 17.5228 2.18658 12 2.18658C6.47715 2.18658 2 6.66374 2 12.1866C2 17.7094 6.47715 22.1866 12 22.1866Z"
+          fill="currentColor"
+        />
+      </g>{' '}
+      <defs>
+        <clipPath id="alert-circle-lg-clip">
+          <rect
+            width="24"
+            height="24"
+            fill="white"
+            transform="translate(0 0.186584)"
+          />
         </clipPath>
       </defs>
     </svg>
