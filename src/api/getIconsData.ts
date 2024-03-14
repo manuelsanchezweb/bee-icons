@@ -6,5 +6,9 @@ export async function getIconsData(): Promise<Icon[]> {
   const res = await fetch(url)
   const data = await res.json()
 
-  return data as Icon[]
+  const sortedIcons = data.sort((a: Icon, b: Icon) =>
+    a.name.localeCompare(b.name)
+  )
+
+  return sortedIcons as Icon[]
 }
