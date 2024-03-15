@@ -11,7 +11,7 @@ import {
   iconIssueSubject,
 } from '@/utils/utils'
 import { animate, stagger } from 'motion'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import toast from 'react-hot-toast'
 
 const IconList = ({ icons }: { icons: Icon[] }) => {
@@ -22,6 +22,37 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
   const [selectedTerm, setSelectedTerm] = useState<string>('')
   const [selectedCategory, setSelectedCategory] = useState<string>('')
   const allCategories = useMemo(() => getUniqueCategories(icons), [icons])
+  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
+
+  const closeDropdown = (e: MouseEvent) => {
+    const target = e.target as HTMLElement
+    const activeDropdownRef = activeIcon
+      ? dropdownRefs.current[activeIcon]
+      : null
+
+    if (activeDropdownRef && !activeDropdownRef.contains(target)) {
+      setActiveIcon(null)
+    }
+  }
+
+  useEffect(() => {
+    let clickHandler: any
+
+    if (!activeIcon) return
+
+    // Delay adding the event listener to avoid immediate triggering after opening the dropdown
+    const timer = setTimeout(() => {
+      clickHandler = (e: MouseEvent) => closeDropdown(e)
+      document.addEventListener('click', clickHandler)
+    }, 100) // 100 milliseconds delay
+
+    return () => {
+      clearTimeout(timer) // Clear the timer if the component unmounts or before setting up a new one
+      if (clickHandler) {
+        document.removeEventListener('click', clickHandler)
+      }
+    }
+  }, [activeIcon, closeDropdown])
 
   const initialState = {
     currentPage: 1,
@@ -76,13 +107,16 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
     <div className="list-shadow px-8 pt-12 pb-24 rounded-[40px] mb-24">
       <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-16 ">
         <input
-          className="ml-2 pl-2 h-[42px] rounded-md bee-blue-border md:w-[460px] dark:text-black"
+          className={`${
+            isDark ? 'text-black' : 'text-black'
+          } ml-2 pl-2 h-[42px] rounded-md md:w-[460px] list-shadow-alt`}
           type="text"
           name="search"
           defaultValue={selectedTerm}
           onKeyUp={searchTerm}
           placeholder="Search Icon Here"
         />
+
         <div className="flex items-center">
           <label htmlFor="category-select">Category:</label>
           <select
@@ -102,6 +136,13 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
         </div>
       </div>
 
+      <div className="flex flex-col text-center items-center justify-center gap-3 mb-6">
+        <h2 className="text-3xl font-bold">Bee inspired by us</h2>
+        <div className="text-xs text-center">
+          Total number of icons: {icons.length}
+        </div>
+      </div>
+
       <ul
         className={`flex flex-wrap items-start gap-8 md:gap-x-24 ${
           displayedIconsPaginated.length > 0 ? '' : 'md:items-center'
@@ -111,7 +152,9 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
           displayedIconsPaginated.map((icon, index) => (
             <li
               key={index}
-              className="flex flex-col items-center justify-center text-center gap-2 relative"
+              className={`${
+                activeIcon === icon.name ? 'z-[200]' : ''
+              } flex flex-col items-center justify-center text-center gap-2 relative `}
             >
               <button
                 onClick={() =>
@@ -122,9 +165,12 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
                 <div dangerouslySetInnerHTML={{ __html: icon.icon.lg }} />
               </button>
               {activeIcon === icon.name && (
-                <div className="dropdown-menu w-[120px] absolute top-0 left-1/2 -translate-x-1/2 lg:-right-24 lg:left-auto lg:top-0 lg:translate-x-0 shadow-sm border border-solid border-black bg-white flex flex-col z-[200]">
+                <div
+                  ref={(el) => (dropdownRefs.current[icon.name] = el)}
+                  className="dropdown-menu w-[150px] absolute top-0 left-1/2 -translate-x-1/2 lg:-right-48 lg:left-auto lg:-top-[20%] lg:translate-x-0 shadow-sm border border-solid border-black bg-white flex flex-col"
+                >
                   <button
-                    className="flex gap-2 items-center hover:bg-gray-200 py-1 px-2"
+                    className="flex gap-2 items-center hover:bg-gray-200 py-2 px-2"
                     onClick={() => {
                       copyToClipboard(icon, 'lg')
                       setActiveIcon(null)
@@ -134,21 +180,21 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
                       })
                     }}
                   >
-                    <IconCopy extraClasses="h-3 w-3" />
+                    <IconCopy extraClasses="h-4 w-4" />
                     <span className="text-[10px] text-black">Copy</span>
                   </button>
                   <button
-                    className="flex gap-2 items-center hover:bg-gray-200 py-1 px-2"
+                    className="flex gap-2 items-center hover:bg-gray-200 py-2 px-2"
                     onClick={() => downloadSVG(icon, 'lg')}
                   >
-                    <IconDownload extraClasses="h-3 w-3" />
+                    <IconDownload extraClasses="h-4 w-4" />
                     <span className="text-[10px] text-black">Download</span>
                   </button>
                   <a
-                    className="flex gap-2 items-center hover:bg-gray-200 py-1 px-2"
+                    className="flex gap-2 items-center hover:bg-gray-200 py-2 px-2"
                     href={`mailto:manusansan22@gmail.com?subject=${iconIssueSubject}${icon.name}_id-${icon.id}&body=${iconIssueBody}`}
                   >
-                    <IconIssue extraClasses="h-3 w-3" />
+                    <IconIssue extraClasses="h-4 w-4" />
                     <span className="text-[10px] text-black">
                       Report an issue
                     </span>
@@ -202,7 +248,7 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
           </button>
 
           <button
-            className={state.currentPage === 1 ? 'font-bold' : ''}
+            className={state.currentPage == 1 ? 'font-bold' : ''}
             onClick={() => actions.jumpToPage(1)}
           >
             1
