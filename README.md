@@ -5,7 +5,7 @@
 # 💙 BeeIcons
 
 <img src="https://img.shields.io/github/issues-raw/manuelsanchezweb/bee-icons" alt="Iconos">
-<img src="https://img.shields.io/badge/+160-icons%20available-blue" alt="Iconos">
+<img src="https://img.shields.io/badge/+200-icons%20available-blue" alt="Iconos">
 
 Your new favourite icon pool!
 

@@ -17,6 +17,7 @@ import toast from 'react-hot-toast'
 const IconList = ({ icons }: { icons: Icon[] }) => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
+  const [color, setColor] = useState<string>('#000000')
   const [activeIcon, setActiveIcon] = useState<string | null>(null)
   const [displayedIcons, setDisplayedIcons] = useState<Icon[]>(icons)
   const [selectedTerm, setSelectedTerm] = useState<string>('')
@@ -99,25 +100,51 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedTerm, selectedCategory])
 
+  useEffect(() => {
+    const allSvgs = document
+      .querySelector('#icons-list')
+      ?.querySelectorAll('svg')
+    if (!allSvgs) return
+    allSvgs.forEach((svg) => {
+      svg.style.color = color
+    })
+  }, [color, displayedIcons, state])
+
   const searchTerm = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
     setSelectedTerm((e.target as HTMLInputElement).value)
   }, [])
 
   return (
-    <div className="list-shadow px-8 pt-12 pb-24 rounded-[40px] mb-24">
-      <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-16 ">
-        <input
-          className={`${
-            isDark ? 'text-black' : 'text-black'
-          } ml-2 pl-2 h-[42px] rounded-md md:w-[460px] list-shadow-alt`}
-          type="text"
-          name="search"
-          defaultValue={selectedTerm}
-          onKeyUp={searchTerm}
-          placeholder="Search Icon Here"
-        />
+    <div className="list-shadow px-4 md:px-8 pt-12 pb-24 rounded-[40px] mb-24">
+      <div className="flex flex-col md:flex-row gap-4 justify-between md:items-center mb-16 ">
+        <div className="flex flex-col gap-2">
+          <input
+            className={`${
+              isDark ? 'text-black' : 'text-black'
+            } ml-2 pl-2 h-[42px] rounded-md md:w-[460px] list-shadow-alt`}
+            type="text"
+            name="search"
+            defaultValue={selectedTerm}
+            onKeyUp={searchTerm}
+            placeholder="Search Icon Here"
+          />
 
-        <div className="flex items-center">
+          <div className="flex flex-col sm:flex-row my-4 gap-2 ml-2">
+            <label htmlFor="color">
+              <strong>NEW:</strong> try out with your color
+            </label>
+            <input
+              id="color"
+              name="color"
+              type="color"
+              value={color}
+              onChange={(e) => setColor(e.target.value)}
+            />
+            <span>{color}</span>
+          </div>
+        </div>
+
+        <div className="flex items-center ml-2">
           <label htmlFor="category-select">Category:</label>
           <select
             className="ml-2 h-[42px] appearance-none outline-none bg-transparent"
@@ -144,9 +171,10 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
       </div>
 
       <ul
+        id="icons-list"
         className={`flex flex-wrap items-start gap-8 md:gap-x-24 ${
           displayedIconsPaginated.length > 0 ? '' : 'md:items-center'
-        }  justify-center md:justify-start`}
+        } justify-center`}
       >
         {displayedIconsPaginated.length > 0 ? (
           displayedIconsPaginated.map((icon, index) => (
