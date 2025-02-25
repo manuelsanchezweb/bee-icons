@@ -1,13 +1,15 @@
-import { useTheme } from "@/context/ThemeContext";
-import { useEffect } from "react";
+'use client'
+
+import { useTheme } from '@/context/ThemeContext'
+import { useEffect } from 'react'
 
 export default function ToggleMode() {
-  const { theme, toggleTheme } = useTheme();
-  const isDark = theme === "dark";
+  const { theme, toggleTheme } = useTheme()
+  const isDark = theme === 'dark'
 
   useEffect(() => {
-    document.body.setAttribute("data-theme", theme);
-  }, [theme]);
+    document.body.setAttribute('data-theme', theme)
+  }, [theme])
 
   return (
     <>
@@ -20,5 +22,5 @@ export default function ToggleMode() {
         <span className="slider"></span>
       </label>
     </>
-  );
+  )
 }

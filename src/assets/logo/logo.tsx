@@ -1,9 +1,11 @@
-import { useTheme } from "@/context/ThemeContext";
+'use client'
+
+import { useTheme } from '@/context/ThemeContext'
 
 export default function Logo({ classIcon }: { classIcon?: string }) {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
-  const color = isDark ? "#fff" : "#161616";
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
+  const color = isDark ? '#fff' : '#161616'
 
   return (
     <svg
@@ -57,5 +59,5 @@ export default function Logo({ classIcon }: { classIcon?: string }) {
         </clipPath>
       </defs>
     </svg>
-  );
+  )
 }

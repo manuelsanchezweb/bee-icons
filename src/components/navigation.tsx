@@ -1,7 +1,8 @@
+'use client'
+
 import Logo from '@/assets/logo/logo'
 import React from 'react'
 import ToggleMode from './toggle-mode'
-import Link from 'next/link'
 
 export const Navigation = () => {
   return (

@@ -1,3 +1,5 @@
+'use client'
+
 import { useTheme } from '@/context/ThemeContext'
 import usePagination from '@/hooks/usePagination'
 import { Icon } from '@/types/types'
@@ -162,14 +164,12 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
           </select>
         </div>
       </div>
-
       <div className="flex flex-col text-center items-center justify-center gap-3 mb-6">
         <h2 className="text-3xl font-bold">Bee inspired by us</h2>
         <div className="text-xs text-center">
           Total number of icons: {icons.length}
         </div>
       </div>
-
       <ul
         id="icons-list"
         className={`flex flex-wrap items-start gap-8 md:gap-x-24 ${
@@ -194,7 +194,9 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
               </button>
               {activeIcon === icon.name && (
                 <div
-                  ref={(el) => (dropdownRefs.current[icon.name] = el)}
+                  ref={(el) => {
+                    dropdownRefs.current[icon.name] = el
+                  }}
                   className="dropdown-menu w-[150px] absolute top-0 left-1/2 -translate-x-1/2 lg:-right-48 lg:left-auto lg:-top-[20%] lg:translate-x-0 shadow-sm border border-solid border-black bg-white flex flex-col"
                 >
                   <button
@@ -247,7 +249,6 @@ const IconList = ({ icons }: { icons: Icon[] }) => {
           </p>
         )}
       </ul>
-
       <div className="flex flex-col mt-12">
         <div className="flex justify-center gap-8">
           <button
