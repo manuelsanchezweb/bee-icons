@@ -1,3 +1,7 @@
+import { ThemeProvider } from '@/context/ThemeContext'
+import '@/styles/globals.css'
+import '@/styles/toggle-mode.css'
+
 import localFont from 'next/font/local'
 
 // Font files can be colocated inside of `pages`
@@ -26,18 +30,23 @@ const satoshi = localFont({
   ],
 })
 
-import { ThemeProvider } from '@/context/ThemeContext'
-import '@/styles/globals.css'
-import '@/styles/toggle-mode.css'
-import type { AppProps } from 'next/app'
-import { Toaster } from 'react-hot-toast'
+import type { Metadata } from 'next'
 
-export default function App({ Component, pageProps }: AppProps) {
+export const metadata: Metadata = {
+  title: 'Home',
+  description: 'Welcome to Next.js',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <div className={satoshi.className}>
-      <ThemeProvider>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={satoshi.className}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
   )
 }

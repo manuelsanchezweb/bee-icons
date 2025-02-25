@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/manuelsanchezweb/bee-icons#readme",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -21,14 +21,14 @@
   },
   "dependencies": {
     "@types/node": "20.11.27",
-    "@types/react": "18.2.65",
-    "@types/react-dom": "18.2.22",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.1.3",
+    "eslint-config-next": "15.1.7",
     "motion": "^10.17.0",
-    "next": "14.1.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "15.1.7",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-hot-toast": "^2.4.1",
     "typescript": "5.4.2"
   },
@@ -36,5 +36,9 @@
     "autoprefixer": "^10.4.18",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1"
+  },
+  "overrides": {
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4"
   }
 }

@@ -1,18 +1,18 @@
-import { getIconsData } from '@/api/getIconsData'
 import Contact from '@/components/contact'
 import Footer from '@/components/footer'
 import Hero from '@/components/hero'
 import IconList from '@/components/icon-list'
 import { Navigation } from '@/components/navigation'
 import { Icon } from '@/types/types'
-import { downloadSVG } from '@/utils/utils'
 import Head from 'next/head'
-import { useRef } from 'react'
 import { Toaster } from 'react-hot-toast'
+import ExampleIcons from '@/components/example-icons'
+import { getIconsData } from '@/server/getIcons'
 
-export default function Home({ icons }: { icons: Icon[] }) {
-  if (!icons) return null
-  const copyIcons = [...icons]
+export default async function Home() {
+  const icons = await getIconsData()
+
+  const copyIcons = icons as Icon[]
 
   return (
     <>
@@ -42,26 +42,13 @@ export default function Home({ icons }: { icons: Icon[] }) {
         <Navigation />
         <Hero />
         <div className="flex flex-col items-center my-10 md:my-24 text-center gap-4">
-          <small>Last updated: March 2024</small>
+          <small>Last updated: March 2025</small>
           <h2 className="font-black text-4xl">
             +200 cool icons already made their way to the hive!
           </h2>
           <div className="flex flex-col items-center gap-4">
             <h3>Some of the new incorporations:</h3>
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              {copyIcons
-                .sort((a, b) => b.id - a.id)
-                .slice(0, 10)
-                .map((icon: Icon) => (
-                  <button
-                    key={icon.name}
-                    onClick={() => downloadSVG(icon, 'lg')}
-                    className="hexa-shape hexa-shadow bg-gray-100 flex flex-col items-center justify-center min-w-[72px] w-[72px] min-h-[64px] transition-all hover:scale-110 focus:scale-110 focus:outline-none hover:bg-gray-300"
-                  >
-                    <div dangerouslySetInnerHTML={{ __html: icon.icon.lg }} />
-                  </button>
-                ))}
-            </div>
+            <ExampleIcons icons={copyIcons} />
           </div>
 
           <p className="text-2xl">Stay tuned to see what is about to come!</p>
@@ -74,31 +61,11 @@ export default function Home({ icons }: { icons: Icon[] }) {
           containerClassName="fixed"
           position="top-right"
         />
-        <IconList icons={icons} />
+        <IconList icons={copyIcons} />
 
         <Contact />
       </main>
       <Footer />
     </>
   )
-}
-
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const icons = await getIconsData()
-
-  if (!icons) {
-    return {
-      notFound: true,
-    }
-  }
-
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {
-    props: {
-      icons,
-    },
-  }
 }
